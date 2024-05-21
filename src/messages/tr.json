@@ -1,0 +1,41 @@
+{
+    "Beginmodal": {
+        "title": "Oynamaya hazır mısınız?",
+        "words": "Kelime",
+        "points": "Puan",
+        "foundWords": "Bulunan Kelimeler",
+        "currentScore": "Şuanki Puanınız",
+        "time": "Verilen Süre",
+        "startgame": " Oyunu Başlat",
+        "tryAgainGame": "Tekrar Dene",
+        "newgame": "Yeni Oyun",
+        "sec": "sn"
+    },
+    "ranks": {
+        "beginner": "Başlangıç",
+        "novice": "Acemi",
+        "okay": "İyi",
+        "good": "Başarılı",
+        "solid": "Sağlam",
+        "great": "Harika",
+        "advanced": "Gelişmiş",
+        "expert": "Uzman",
+        "master": "Usta",
+        "to": "den"
+    },
+    "main": {
+        "delete": "Sil",
+        "enter": "Kontrol",
+        "share": "Puanınızı Paylaşın",
+        "copied": "Panoya kopyalandı!",
+        "haveFound": "kelime buldunuz",
+        "words": ""
+    },
+    "alertMsg": {
+        "shortWord": "Kelime çok kısa",
+        "missingWord": "Merkez harf eksik",
+        "alreadyExist": "Kelimesi listede bulunuyor.",
+        "success": "kelimesi  listede. Tebrikler!",
+        "notFound": "Kelimeler listesinde bulunamadı."
+    }
+}

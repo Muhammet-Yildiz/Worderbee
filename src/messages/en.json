@@ -1,0 +1,42 @@
+{
+    "Beginmodal": {
+        "title": "Ready to Play?",
+        "words": "Words",
+        "points": "Points",
+        "foundWords": "Founded Words",
+        "currentScore": "Current Score",
+        "time": "Time Given",
+        "startgame": "Start Game",
+        "tryAgainGame": "Try Again Game",
+        "newgame": "New Game",
+        "sec": "sec"
+    },
+    "ranks": {
+        "beginner": "Beginner",
+        "novice": "Novice",
+        "okay": "Okay",
+        "good": "Good",
+        "solid": "Solid",
+        "great": "Great",
+        "advanced": "Advanced",
+        "expert": "Expert",
+        "master": "Master",
+        "to": "to"
+    },
+    "main": {
+        "delete": "Delete",
+        "enter": "Enter",
+        "share": "Share your score",
+        "copied": "Copied to clipboard!",
+        "haveFound": "We have found",
+        "words": "words"
+    },
+    "alertMsg": {
+        "shortWord": "Too short word ",
+        "missingWord": "Missing Center Letter",
+        "alreadyExist": "Word is already in the list",
+        "success": "is in the words list . Well done!",
+        "notFound": "Not in the words list"
+    }
+
+}

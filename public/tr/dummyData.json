@@ -1,0 +1,22 @@
+{
+    "findWords": [
+
+
+        "site", "sire", "sipi", "sert", "siir", "sest", "sept", "süpür", "süre", "sözü", "sati", "sektör", "septisit", "serpme", "sekti", "serpiştirme", "peri", "seri", "siper", "spor", "septik", "serpi",
+
+        "asya", "ateş", "asalet", "aslan", "asal", "asansör", "asit", "asil", "asma", "asilane", "asır", "aşağı", "ayak", "aşağıya", "aşama", "aşırı", "aşık", "aşağıdaki", "asitlik", "aşağılamak", "aşağıya", "doğru", "aşılama", "asar", "asorti", "asist", "asansörü", "aşağısı", "aşırıya", "asayiş", "asfalt", "aşamak", "asla", "asgari", "asansörün", "asude", "asimilasyon", "asalak", "aşağısında", "asmaa", "ashab",
+
+        "lütfen", "olgun", "ölçü", "oluk", "gölge", "lütuf", "tüfek", "gövde", "güven", "lütufkar", "ölüm", "olmak", "olur", "olay", "lütufkâr", "lütufkârlık", "oluklu", "lütufkarlık", "lösemi", "lisan", "lodos", "laboratuvar", "laboratuvarlık", "lotos", "lamba", "lokum", "ilgi", "lügat", "file", "lazer", "lira", "laborant", "liman", "levrek", "lojistik", "lojman", "legal", "lojmanlar", "lotus", "lokomotif", "lavaş",
+
+        "ciğer", "ciğerlik", "cici", "cips", "cilt", "cemaat", "civar", "cemaatlik", "ciddi", "cıvık", "cirit", "cimri", "cihaz", "ciğerhane", "cürmü", "cüzi", "ciddiyet", "cıva", "ceket", "curcuna", "cemaatleşmek", "cenup", "cimbiz", "ciltli", "ciltlik", "ceviz", "cümbüş", "cumhur", "cıvıl", "cilveli", "ciğerlemek", "ciyaklamak", "camci", "ciltçi", "cırcır", "cırlak", "cakıl", "cavıl", "cırt", "cift",
+
+        "kedi", "evde", "masa", "kitap", "gölge", "elma", "yatak", "sandalye", "kalem", "ağaç", "kapı", "lamba", "bilgisayar", "telefon", "araba", "televizyon", "insan", "köpek", "çanta", "masaüstü", "sepet", "gözlük", "kitaplık", "saat", "anahtar", "yemek", "sandık", "koltuk", "ayakkabı", "çanta", "park", "ayna", "yorgan", "banyo", "soba", "mutfak", "yemek", "duvar", "dolap", "radyo", "halı", "perde", "yüzme", "bahçe", "çiçek", "sinek", "yıldız", "araba", "telefon", "kutu", "bavul", "çatal", "tabak", "salata", "sebze", "meyve", "balık", "tavuk", "pasta", "pizza", "dondurma", "içecek", "kahve", "kola", "bira", "meyve", "yoğurt", "peynir", "ekmek", "makarna", "pilav", "çorba", "kebap", "köfte", "salata", "sandviç", "hamburger", "patates", "soğan", "sarımsak", "domates", "biber", "havuç", "patlıcan", "kabak", "salatalık", "marul", "ıspanak", "lahana", "fasulye", "bezelye", "barbunya", "mercimek", "nohut", "pirinç", "bulgur", "şeker", "zeytinyağı", "sıvı", "sirke", "limon", "maydanoz", "dereotu", "nane", "kekik", "tarçın", "kimyon", "kırmızıbiber", "karabiber", "kurabiye", "börek", "poğaça", "pasta", "tatlı", "aşure", "baklava", "lokum", "şekerleme", "helva", "çikolata", "dondurma", "şerbet", "reçel", "marmelat", "pekmez", "sucuk", "pastırma", "sosis", "salam", "jambon", "zeytin", "peynir", "yoğurt", "krema", "tereyağı", "margarin", "balık", "tavuk",
+
+        "ayak", "meyve", "anne", "baba", "deniz", "gökyüzü", "kara", "yıldız", "ağaç", "bayrak", "ateş", "rüzgar", "akşam", "sabah", "çiçek", "deniz", "meyve", "hayat", "şehir", "tren", "uçak", "gemi", "araba", "bisiklet", "motor", "otobüs", "tramvay", "metro", "taksi", "minibüs", "treyler", "kamyon", "traktör", "bisiklet", "scooter", "kayık", "kanal", "nehır", "deniz", "okyanus", "tepe", "bayır", "uçurum", "kumsal", "orman", "çayır", "tarla", "bahçe", "park", "mısır", "buğday", "arpa", "pirinç", "fasulye", "bezelye", "nohut", "mercimek", "şeker", "zeytin", "ayçiçeği", "susam", "pamuk", "kenevir", "pamuk", "ipek", "deri", "dantel", "kumaş", "keten", "kürk", "elbise", "gömlek", "pantolon", "etek", "elbise", "ceket", "mont", "hırka", "kazak", "şapka", "bere", "şal", "eşarp", "kravat", "çorap", "ayakkabı", "terlik", "sandalet", "spor", "topuklu", "terlik", "çizme", "eldiven", "çanta", "cüzdan", "çanta", "valiz", "bavul", "portföy", "kemer", "şapka", "şemsiye", "saat", "yüzük", "bilezik", "kolye", "küpe", "broş", "kravat", "mendil", "atkı", "eşarp", "çorap", "eldiven", "şalvar", "etek", "pantolon", "gömlek", "ceket"
+
+
+
+    ],
+    "pangrams": ["sertpie", "asytnel", "lovfgte", "czauıht", "eaezplo", "mklopya", "usplkar", "peascrz", "keasytc", "reakhlv"]
+
+}

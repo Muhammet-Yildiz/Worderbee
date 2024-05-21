@@ -1,0 +1,22 @@
+{
+    "findWords": [
+        "doddery", "dopey", "dory", "dowdy", "dowry", "droopy", "dryer", "dyed", "dewy", "dyer", "eddy", "eyed", "eyedropper", "peppery", "peppy", "poppy", "powdery", "preppy", "prey", "preyed", "pyre", "eedye", "eedyed", "eeedy", "eopy", "eowdy", "weedy", "weepy", "woody", "wordy", "worry", "wryer", "yore",
+
+        "awning", "awnings", "awns", "swabbing", "bigwig", "bigwigs", "gnaw", "gnawing", "gnaws", "sawing", "saws", "swab", "swabs", "swag", "swagging", "swags", "swain", "swains", "swan", "swanning", "swans", "swig", "swigging", "swigs", "swing", "swinging", "swings", "wagging", "waging", "wags", "wain", "wains", "waning", "wanna", "wasabi", "wigging", "wigs", "wigwag", "awing", "wigwagging", "wigwags", "wing", "winging", "wings", "wining", "winning", "winnings", "wins", "wising",
+
+        "netbooks", "notebooks", "been", "bees", "beet", "beets", "bennet", "bent", "betokens", "bents", "beset", "besets", "besot", "besots", "best", "bests", "betoken", "betook", "bets", "bobs", "bonbon", "bonbons", "bone", "bones", "bonk", "bonks", "bonnet", "bonnets", "bonobo", "bonobos", "boob", "boobs", "book", "books", "boon", "boons", "boos", "boost", "boosts", "boot", "bootee", "bootees", "boots", "boson", "bosons", "boss", "bosses", "botnet", "botnets", "bots", "ebbs", "knob", "knobs", "netbook", "nobs", "notebook", "obese", "oboe", "oboes", "obsess", "obsesses", "snob", "snobs", "sobs",
+
+        "carping", "crapping", "prancing", "acacia", "acai", "acing", "arcing", "caging", "cairn", "cancan", "caning", "canning", "capping", "caring", "carp", "carpi", "cigar", "circa", "cirri", "crag", "craning", "cringing", "gracing", "icing", "narc", "niacin", "pacing", "panic", "pica", "picnic", "priapic", "pricing", "racing", "ricin", "ricing",
+
+        "giro", "going", "gong", "gonging", "goon", "goop", "gorging", "gorgon", "goring", "gorp", "gringo", "grog", "groin", "grooving", "groping", "ignoring", "iron", "ironing", "noggin", "noon", "ongoing", "onion", "oping", "opining", "opinion", "orig", "origin", "pinion", "pinioning", "pinon", "pirogi", "pong", "ponging", "pooing", "poop", "pooping", "poor", "popping", "poring", "prion", "prior", "pron", "prong", "prop", "propping", "prov", "proving", "rigor", "roping", "roving", "vigor", "vino",
+
+        "agar", "aggro", "agog", "angora", "argon", "dago", "dang", "dong", "drag", "dragon", "dragoon", "gaga", "gang", "goad", "gonad", "gong", "gonna", "good", "goon", "goop", "gorgon", "gorp", "grad", "gran", "grand", "granddad", "grandpa", "groan", "grog", "grgan", "pagan", "pagoda", "pang", "paragon", "pong", "prang", "prong", "propaganda", "raga", "ragga", "rang",
+
+        "golem", "glom", "greet", "melter", "metro", "motel", "more", "rome", "tome", "lore", "ogle", "tremor", "motley",
+
+        "clover", "cover", "covert", "lover", "recto", "voter", "trace", "actor", "clear", "carol", "coral", "toric", "craft", "react", "carve",
+
+        "bright", "births", "brings", "rights", "grits", "shirt", "sight", "brith", "grist", "tribs", "ratio", "train", "joint", "intro", "irate", "ration", "tarin", "orant", "rojan", "janitor", "iron", "join", "rant", "roan", "riot", "rain", "torn", "tain", "roti", "rani", "into", "jota", "anti", "junior", "aroint", "origan"
+    ],
+    "pangrams": ["deoprwy", "wabgins", "beknost", "cagınpr", "gınoprv", "adgnopr", "gömlekr", "clovert", "brights", "ajitorn"]
+}
