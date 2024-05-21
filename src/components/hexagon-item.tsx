@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
-import { styled } from '@mui/styles'
+import { nunito } from '@/lib/fonts';
+import { styled } from '@mui/material';
 
 const Hexagon =  styled('div')(({ index }  : { index: number }) => ({
     width: '80px',
@@ -68,11 +69,14 @@ export function HexagonItem({ letter ,index ,onClick} : HexagonItemProps) {
             }}
             index={index}
             onClick={() => onClick(letter)}
+            className={nunito.className}
 
         >
             <HexagonInner>{
                     letter.toUpperCase()
-                }</HexagonInner>
+                }
+                
+                </HexagonInner>
         </Hexagon>
     )
 }

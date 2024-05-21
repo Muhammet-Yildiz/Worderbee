@@ -8,7 +8,7 @@ if (typeof window !== 'undefined') {
 }
 
 export function GetCurrentGame() {
-    const { data, error } = useSWR("/dummyData.json");
+    const { data, error } = useSWR(`${lang}/dummyData.json`);
 
     const randomIndex = data ? Math.floor(Math.random() * data?.pangrams.length) : 0
     let gamesLists = data && getStorage(`${lang}_GamesLists`

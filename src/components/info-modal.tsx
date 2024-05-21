@@ -1,7 +1,7 @@
 import { Typography, Fade, Modal, Box, Backdrop, } from '@mui/material';
 import { QuestionIcon } from '@/icons/question';
 import { useState } from 'react';
-import { tiltWarp } from '@/lib/fonts';
+import { nunito, tiltWarp } from '@/lib/fonts';
 
 const style = {
     position: 'absolute',

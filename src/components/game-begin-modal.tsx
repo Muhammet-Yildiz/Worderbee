@@ -1,7 +1,6 @@
 "use client";
-import { styled } from '@mui/styles';
-import { tiltWarp } from '@/lib/fonts';
-import { Stack, Button, Fade, Modal, Box, Backdrop, Typography } from '@mui/material';
+import { nunito, tiltWarp } from '@/lib/fonts';
+import { Stack, Button, Fade, Modal, Box, Backdrop, Typography, styled } from '@mui/material';
 import { CreateNewGame } from '@/services/queries';
 
 type currentGameType = {

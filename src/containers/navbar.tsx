@@ -1,6 +1,5 @@
 "use client";
-import { Box, Container, Stack, Typography } from '@mui/material'
-import { styled } from '@mui/styles';
+import { Box, Container, Stack, styled } from '@mui/material'
 import { LanguagePopover } from '@/components/language-popover';
 import { useLocale } from 'next-intl';
 import { SettingsIcon } from '@/icons/settings';

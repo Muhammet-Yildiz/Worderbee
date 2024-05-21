@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Box, Container, Stack, Step, StepContent, StepLabel, Stepper, Typography } from '@mui/material'
 import { CountdownTimer } from './countdown-timer'
 
-const ranks = ['beginner', 'novice', 'okay ', 'good ', 'solid ', 'great', 'advanced', 'expert', 'master']
+const ranks = ['beginner', 'novice', 'okay', 'good', 'solid', 'great', 'advanced', 'expert', 'master']
 
 type BlockStepperProps = {
   rank: number,

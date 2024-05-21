@@ -18,5 +18,5 @@
 
         "bright", "births", "brings", "rights", "grits", "shirt", "sight", "brith", "grist", "tribs", "ratio", "train", "joint", "intro", "irate", "ration", "tarin", "orant", "rojan", "janitor", "iron", "join", "rant", "roan", "riot", "rain", "torn", "tain", "roti", "rani", "into", "jota", "anti", "junior", "aroint", "origan"
     ],
-    "pangrams": ["deoprwy", "wabgins", "beknost", "cagınpr", "gınoprv", "adgnopr", "gömlekr", "clovert", "brights", "ajitorn"]
+    "pangrams": ["beknost", "caginpr", "ginoprv", "adgnopr", "gömlekr", "deoprwy", "wabgins", "clovert", "brights", "ajitorn"]
 }

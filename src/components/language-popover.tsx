@@ -9,27 +9,28 @@ import {
 } from '@mui/material';
 import { UKFlagIcon } from '@/icons/uk_flag';
 import { TRFlagIcon } from '@/icons/tr_flag';
+import { nunito, tiltWarp } from '@/lib/fonts';
 
-const languageOptions : 
-{
-  [key: string]: {
-    icon:  any;
-    label: string;
-  };
-}
-= {
+const languageOptions:
+  {
+    [key: string]: {
+      icon: any;
+      label: string;
+    };
+  }
+  = {
   en: {
-    icon:  <UKFlagIcon/>,
+    icon: <UKFlagIcon />,
     label: 'English'
   },
   tr: {
-    icon:  <TRFlagIcon/>,
+    icon: <TRFlagIcon />,
     label: 'Türkish'
   }
-  
+
 };
 
-export const LanguagePopover = ( { language} : { language: string } ) => {
+export const LanguagePopover = ({ language }: { language: string }) => {
 
   const anchorRef = useRef(null);
   const [open, setOpen] = useState(false);
@@ -47,32 +48,41 @@ export const LanguagePopover = ( { language} : { language: string } ) => {
 
   return (
     <>
-    
-        <Box
+
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.52rem',
+          fontSize: '0.9rem',
+          '& svg': {
+            width: '1.4rem',
+            height: '1.4rem',
+          },
+          backgroundColor: '#E4EAF3',
+          p: '0.52rem 0.62rem',
+          cursor: 'pointer',
+          transition: '0.3s all',
+          borderRadius: '0.4rem',
+          fontWeight: '500',
+        }}
+        onClick={handleOpen}
+        ref={anchorRef}
+      >
+        {selectedOption.icon}
+        <Typography
+          className={tiltWarp.className}
           sx={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.52rem',
             fontSize: '0.9rem',
-            '& svg': {
-              width: '1.4rem',
-              height: '1.4rem',
-            },
-            backgroundColor: '#E4EAF3',
-            p: '0.52rem 0.62rem',
-            cursor: 'pointer',
-            transition: '0.3s all',
-            borderRadius: '0.4rem',
-            fontWeight:'bold',
+            fontWeight: '500',
+            color :'#4c4c4c'
           }}
-          onClick={handleOpen}
-          ref={anchorRef}
-        >
-         
-            {selectedOption.icon}
-            
-            { language === 'en' ? 'EN' : 'TR' }
-        </Box>
+          >
+
+          {language === 'en' ? 'EN' : 'TR'}
+        </Typography>
+
+      </Box>
       <Popover
         anchorEl={anchorRef.current}
         anchorOrigin={{
@@ -86,14 +96,14 @@ export const LanguagePopover = ( { language} : { language: string } ) => {
           sx: { width: 240 }
         }}
       >
-        
+
         {Object.keys(languageOptions).map((option) => (
           <MenuItem
             component="a"
-            onClick={() =>{
-              if(option === language) return;
+            onClick={() => {
+              if (option === language) return;
 
-              window.open(`/${option}`,'_blank')
+              window.open(`/${option}`, '_blank')
               handleClose();
             }}
             key={option}
@@ -109,7 +119,7 @@ export const LanguagePopover = ( { language} : { language: string } ) => {
                   }
                 }}
               >
-                
+
                 {languageOptions[option].icon}
               </Box>
             </ListItemIcon>
