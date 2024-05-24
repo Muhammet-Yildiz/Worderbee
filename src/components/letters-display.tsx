@@ -13,7 +13,7 @@ export function LettersDisplay(
           '& span': {
             width: 5,
             height: 35,
-            backgroundColor: 'lightgreen',
+            backgroundColor:  (theme) => theme.palette.primary.main,
             animation: 'cursor 1s  infinite',
           },
           '@keyframes cursor': {
@@ -33,7 +33,9 @@ export function LettersDisplay(
               sx={{
                 color:
                   game?.pangram_display[0]
-                    === letter ? 'lightgreen' : 'black',
+                    === letter ? 
+                    (theme) => theme.palette.primary.main
+                    :  (theme) => theme.palette.text.primary,
                 textTransform: 'uppercase',
                 fontFamily: 'Nunito , sans-serif !important',
                 mr: 0.4,

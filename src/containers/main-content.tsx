@@ -8,7 +8,7 @@ import { HexagonGrid } from '@/components/hexagon-grid';
 import { LettersDisplay } from '@/components/letters-display';
 import { ShareButton } from '@/components/share-button';
 import { CheckWord, GetCurrentGame } from '@/services/queries';
-import { Box, Button, Stack, TextField, Typography } from '@mui/material';
+import { alpha, Box, Button, Stack, TextField, Typography } from '@mui/material';
 import toast from 'react-hot-toast';
 
 type currentGameType = {
@@ -141,6 +141,7 @@ export default function MainContent( { messages }: { messages: any } ) {
       alignItems="center"
       sx={{
         height: '644px',
+        backgroundColor :'background.default'
       }}
     >
 
@@ -183,18 +184,12 @@ export default function MainContent( { messages }: { messages: any } ) {
         handleCheckWord={handleCheckWord}
         messages={messages.main}
       />
-      <Box sx={{ height: 8 }} />
+      <Box sx={{ height: 12 }} />
       <ShareButton
         messages={messages.main}
         currentScore={game?.currentScore || 0}
       />
-      <Box sx={{ height: 0 }} />
-      <Box sx={{
-        height: 22,
-        bgcolor: '#c3f6c3',
-        width: '100%',
-      }} />
-
+      
 
     </Stack>
   )

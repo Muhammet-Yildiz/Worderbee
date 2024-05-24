@@ -1,4 +1,4 @@
-import { Typography, Fade, Modal, Box, Backdrop, } from '@mui/material';
+import { Typography, Fade, Modal, Box, Backdrop, alpha, } from '@mui/material';
 import { QuestionIcon } from '@/icons/question';
 import { useState } from 'react';
 import { nunito, tiltWarp } from '@/lib/fonts';
@@ -51,17 +51,21 @@ export function InfoModal() {
                 <Fade in={open}>
                     <Box sx={{
                         ...style,
-                        borderRadius: '0.8rem !important',
+                        borderRadius: '0.6rem !important',
+                        outline: 'none !important',
+                        backgroundColor: (theme) => theme.palette.background.default,
                     }}>
 
-                        <Typography id="transition-modal-title" variant="h6" component="h2"
+                        <Typography id="transition-modal-title" variant="h6" 
                             sx={{
                                 fontSize: '1.1rem',
                                 textAlign: 'center',
-                                backgroundColor: '#F1F4F9',
+                                backgroundColor:  (theme) => theme.palette.background.paper,
                                 py: 1.6,
                                 borderRadius: '0.8rem  0.8rem 0 0',
-                                mb: 2
+                                mb: 2,
+                                fontWeight: 500,
+                                color:  (theme) => theme.palette.text.primary,
                             }}
                             className={tiltWarp.className}
                         >
@@ -69,8 +73,9 @@ export function InfoModal() {
                         </Typography>
 
                         {rules.slice(0, 4).map((rule, index) => (
-                            <Typography key={index} id="transition-modal-description" sx={{
-                                fontSize: '0.85rem',
+                            <Typography key={index} 
+                            id="transition-modal-description" sx={{
+                                fontSize: '0.82rem',
                                 py: 0.5,
                                 pl: 2.5,
                                 pr: 1.8,
@@ -78,6 +83,7 @@ export function InfoModal() {
                                     fontSize: '0.77rem',
                                     mr: 0.6
                                 },
+                                color:  (theme) =>  alpha(theme.palette.text.primary, 0.8),
                             }}>
                                 <b> ✔️  </b>
                                 {rule}
@@ -87,11 +93,13 @@ export function InfoModal() {
 
                         <Typography id="transition-modal-title" variant="h6" component="h2"
                             sx={{
-                                fontSize: '1rem',
+                                fontSize: '0.95rem',
                                 pt: 1.6,
                                 pl: 2.5,
                                 borderRadius: '0.8rem  0.8rem 0 0',
-                                mb: 2
+                                mb: 2,
+                                fontWeight: 500,
+                                color:  (theme) =>  alpha(theme.palette.text.primary, 0.95),
                             }}
                             className={tiltWarp.className}
                         >
@@ -100,7 +108,7 @@ export function InfoModal() {
 
                         {rules.slice(4, 7).map((rule, index) => (
                             <Typography key={index} id="transition-modal-description" sx={{
-                                fontSize: '0.85rem',
+                                fontSize: '0.82rem',
                                 py: 0.5,
                                 pl: 2.5,
                                 pr: 1.5,
@@ -108,6 +116,7 @@ export function InfoModal() {
                                     fontSize: '0.77rem',
                                     mr: 0.6
                                 },
+                                color:  (theme) => alpha(theme.palette.text.primary, 0.8),
                             }}>
                                 <b> ✔️  </b>
                                 {rule}

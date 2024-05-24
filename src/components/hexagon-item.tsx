@@ -1,12 +1,10 @@
 "use client";
 import React from 'react';
 import { nunito } from '@/lib/fonts';
-import { styled } from '@mui/material';
-
-const Hexagon =  styled('div')(({ index }  : { index: number }) => ({
+import { alpha, styled } from '@mui/material';
+const Hexagon =   styled('div')(({ index } : { index: number}) => ({
     width: '80px',
     height: '48px',
-    backgroundColor:  !index ? 'lightgreen !important' : '#E4EAF3',
     position: 'relative',
     cursor: 'pointer',
     margin: '22px 0',
@@ -19,33 +17,22 @@ const Hexagon =  styled('div')(({ index }  : { index: number }) => ({
         borderRight: '40px solid transparent',
         transition: '0.3s all',
     },
-    '&:before': {
-        bottom: '100%',
-        borderBottom: !index ? '22px solid lightgreen' :'22px solid #E4EAF3',
-    },
-    '&:after': {
-        top: '100%',
-        width: 0,
-        borderTop: !index ? '22px solid lightgreen' :'22px solid #E4EAF3',
-    },
-    '&.pressed:before , &.pressed:after': {
-        borderBottomColor:  !index ? 'lightgreen' :'#d1d9e6 !important',
-        borderTopColor:  !index ? 'lightgreen' :'#d1d9e6 !important',
-    }
+   
 }))
 
-
-const HexagonInner = styled('div')({
+const HexagonInner =  styled('div')(({ theme }) => ({
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     textAlign: 'center',
-    color: 'black',
+    color: theme.palette.text.primary,
     fontWeight: 'bold',
     fontSize: '22px',
-})
+ 
+}))
 
+   
 type HexagonItemProps = {
     letter: string,
     index: number,
@@ -70,13 +57,28 @@ export function HexagonItem({ letter ,index ,onClick} : HexagonItemProps) {
             index={index}
             onClick={() => onClick(letter)}
             className={nunito.className}
+         sx={{
+            backgroundColor:  !index ?  (theme) =>  alpha(theme.palette.primary.main, 0.7) + '!important'
+            :   (theme) => theme.palette.background.paper + '!important',
+            '&:before': {
+                bottom: '100%',
+                borderBottom: !index ? 
+                (theme) => "22px solid " +alpha(theme.palette.primary.main, 0.7)  :
+                (theme)  => '22px solid ' + theme.palette.background.paper
+            },
+            '&:after': {
+                top: '100%',
+                width: 0,
+                borderTop: !index ?  (theme) => "22px solid " +alpha(theme.palette.primary.main, 0.7)  :    (theme)  => '22px solid ' + theme.palette.background.paper
+            },
+            '&.pressed:before , &.pressed:after': {
+                borderBottomColor:  !index ? (theme) => alpha(theme.palette.primary.main, 0.7) :(theme) => theme.palette.background.paper + '!important',
+                borderTopColor:  !index ? (theme) =>   alpha(theme.palette.primary.main, 0.7) :(theme) => theme.palette.background.paper + '!important',
+            }
+         }}
 
         >
-            <HexagonInner>{
-                    letter.toUpperCase()
-                }
-                
-                </HexagonInner>
+            <HexagonInner>{letter.toUpperCase()}</HexagonInner>
         </Hexagon>
     )
 }

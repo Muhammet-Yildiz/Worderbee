@@ -21,16 +21,16 @@ export  function ActionButtons(
     spacing={3.5}
     sx={{
       '& button': {
-        border: '1px solid #d4dae4',
+        border: (theme) => '1px solid ' + theme.palette.text.disabled,
         borderRadius: 6,
         padding: ' 10px 23px',
         textTransform: 'uppercase',
         fontWeight: 'bold',
         fontSize: 13,
-        color: 'black',
+        color: 'text.primary',
         '&:hover': {
           border: '1px solid #818995',
-          backgroundColor: 'white',
+          backgroundColor:  (theme) =>  theme.palette.background.default
         }
       }
 
@@ -67,14 +67,17 @@ export  function ActionButtons(
 
 
 
-    ><ShuffleIcon />
+    ><ShuffleIcon
+      sx={{
+         fill: (theme) =>  theme.palette.text.primary,
+      }}
+    />
 
     </Button>
 
     <Button
       variant="outlined"
       color="inherit"
-
       onClick={() => handleCheckWord(
         game?.allWords || [], text.join('')
       )}

@@ -1,6 +1,6 @@
 import  { useState, useEffect, useRef } from 'react';
 import { ClockIcon } from '@/icons/clock';
-import { Box } from '@mui/material';
+import { alpha, Box } from '@mui/material';
 
 type CountdownTimerProps = {
   gameStart: boolean;
@@ -40,10 +40,13 @@ export const CountdownTimer = ({ gameStart, gameOver ,currentScore }: CountdownT
         fontWeight: '500',
         fontSize: '1rem',
         lineHeight: 0.1,
-        ml: 4,
+        ml: {
+          xs:2,
+          sm:4
+        },
         fontFamily: 'Nunito , sans-serif !important',
-        color: 'black',
-        backgroundColor: '#E4EAF3',
+        color:  (theme) => theme.palette.text.primary,
+        backgroundColor: (theme) => theme.palette.background.paper,
         width: 95,
         height: 32,
         display: 'flex',
@@ -51,14 +54,15 @@ export const CountdownTimer = ({ gameStart, gameOver ,currentScore }: CountdownT
         justifyContent: 'center',
         borderRadius: 2,
         letterSpacing: 1.2,
-        border: '2px solid #E4EAF3',
+        border:  (theme) => '1px solid ' + theme.palette.text.disabled
       }}
     >
       <ClockIcon
         sx={{
           width: 17,
           height: 17,
-          mr: 1.2
+          mr: 1.2,
+           fill: (theme) => alpha(theme.palette.text.primary, 0.6),
         }}
       />
 

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button } from '@mui/material'
+import { alpha, Button } from '@mui/material'
 
 export function ShareButton(  {messages ,currentScore} : {messages: any ,currentScore : number}) {
     const [toggle, setToggle] = useState(false)
@@ -10,17 +10,19 @@ export function ShareButton(  {messages ,currentScore} : {messages: any ,current
             color="inherit"
             size='small'
             sx={{
-                backgroundColor: 'lightgreen',
+                backgroundColor:  (theme) => alpha(theme.palette.primary.main, 0.7) ,
                 textTransform: 'capitalize',
                 border :'none',
-                p :'0.5rem 1rem',
+                p :'0.52rem 1.3rem',
                 transition: '0.3s all',
                 borderRadius: '0.4rem',
+                fontFamily: 'Nunito , sans-serif !important',
+                fontSize: '0.78rem',
+                color: 'white',
                 '&:hover':{
-                    backgroundColor: '#74d674',
+                    backgroundColor:  (theme) => alpha(theme.palette.primary.main, 0.8) ,
+                   
                 },
-                letterSpacing: 0.6
-               
             }}
 
             onClick={() => {

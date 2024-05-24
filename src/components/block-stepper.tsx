@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Box, Container, Stack, Step, StepContent, StepLabel, Stepper, Typography } from '@mui/material'
+import { alpha, Box, Container, Stack, Step, StepContent, StepLabel, Stepper, Typography } from '@mui/material'
 import { CountdownTimer } from './countdown-timer'
 
 const ranks = ['beginner', 'novice', 'okay', 'good', 'solid', 'great', 'advanced', 'expert', 'master']
@@ -56,7 +56,7 @@ export function BlockStepper({ rank, maxPoint, currentScore, gameStart, gameOver
             fontSize: '1rem',
             lineHeight: 0.1,
             fontFamily: 'Nunito , sans-serif !important',
-            color: 'black',
+            color: (theme) => theme.palette.text.primary,
           }}
         >
           {messages[ranks[activeStep]]}
@@ -70,10 +70,10 @@ export function BlockStepper({ rank, maxPoint, currentScore, gameStart, gameOver
         }}>
           <b>   {activeStep === 6 ? rankList[activeStep + 2]?.point - currentScore :
             rankList[activeStep + 1]?.point - currentScore} </b> {messages.to} {' '}
-          <p
-            style={{
+          <Box component='p'
+            sx={{
               display: 'inline',
-              color: '#827ABD',
+              color:   (theme) => theme.palette.primary.main,
               fontWeight: 600,
               textTransform: 'capitalize'
             }}
@@ -81,7 +81,7 @@ export function BlockStepper({ rank, maxPoint, currentScore, gameStart, gameOver
             {
               messages[ranks[activeStep + 1]]
             }
-          </p>
+          </Box>
         </Typography>
 
       </Stack>
@@ -93,14 +93,17 @@ export function BlockStepper({ rank, maxPoint, currentScore, gameStart, gameOver
       />
 
       <Box sx={{
-        width: 'calc(100% - 260px)',
+        width: {
+          xs : 'calc(100% - 225px)',
+          sm:'calc(100% - 260px)',
+        },
         position: 'absolute',
         right: 13,
         '& b': {
           position: 'absolute',
-          width: '92%',
+          width: '91%',
           height: 2,
-          backgroundColor: '#D8DEE9',
+          backgroundColor: (theme) => theme.palette.background.paper,
           top: 12,
           left: 20,
           zIndex: 1,
@@ -131,23 +134,26 @@ export function BlockStepper({ rank, maxPoint, currentScore, gameStart, gameOver
                 <Step key={i}
                   sx={{
                     '& .MuiStepIcon-root': {
-                      color: '#D8DEE9 !important',
+                      width:  i === 8 ? 38 : 11,
+                      height:  i === 8 ? 38 : 11,
+                      marginTop: activeStep === i || i === 8 ? -0.5 : 0.9,
+                      color:  (theme) => theme.palette.background.paper,
                       '&.Mui-completed': {
-                        color: 'lightgreen !important',
-                        backgroundColor: 'white !important',
+                        color:  (theme) => alpha(theme.palette.primary.main,0.4) + ' !important',
+                        backgroundColor:  (theme) => theme.palette.background.default,
+                        width: 16,
+                        height: 16,
+                        marginTop: 0.6,
                       },
                       '&.Mui-active': {
-                        color: 'lightgreen !important',
+                        color:  (theme) => alpha(theme.palette.primary.main,0.4) + ' !important',
+                        width: 36,
+                        height: 36,
                       },
                     },
-                    '& .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root': {
-                      width: i === 8 ? 30 : 11.5,
-                      height: i === 8 ? 30 : 11.5,
-                      marginTop: activeStep === i || i === 8 ? -0.2 : 0.8,
-                    },
+                   
                     '& svg text ': {
-                      fontSize: '1rem !important',
-                      display: 'none',
+                      display: 'none !important'
                     },
 
                     '& .MuiStepLabel-label': {
@@ -156,9 +162,13 @@ export function BlockStepper({ rank, maxPoint, currentScore, gameStart, gameOver
                       left: i === 8 ? 14 : (i === 0 ? 15 : 13),
                       zIndex: 6,
                       display: activeStep === i || i === 8 ? 'block' : 'none',
-                      color: 'white !important',
+                      color: (theme) => {
+                        return i === 8 ? 
+                        alpha(theme.palette.text.primary,0.7)
+                        : alpha(theme.palette.text.primary,0.6)
+                      },
                       fontWeight: 'bold',
-                      fontSize: '1rem',
+                      fontSize: '0.94rem',
                     },
 
                   }}

@@ -9,7 +9,7 @@ export default async function Home() {
 
   return (
     <>
-      <Navbar />
+      <Navbar  messages={messages} />
       <MainContent messages={messages}/>
       <InformationSection />
     </>

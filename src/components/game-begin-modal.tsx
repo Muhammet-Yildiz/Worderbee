@@ -1,7 +1,11 @@
 "use client";
-import { nunito, tiltWarp } from '@/lib/fonts';
-import { Stack, Button, Fade, Modal, Box, Backdrop, Typography, styled } from '@mui/material';
+import { tiltWarp } from '@/lib/fonts';
+import { Stack, Button, Fade, Modal, Box, Backdrop, Typography, styled, alpha } from '@mui/material';
 import { CreateNewGame } from '@/services/queries';
+import { useSettings } from '@/contexts/settings-context';
+import { SunIcon } from '@/icons/sun';
+import { MoonIcon } from '@/icons/moon';
+import { ChangeTintColor } from './change-tint-color';
 
 type currentGameType = {
     pangram: string,
@@ -27,13 +31,13 @@ type Props = {
 
 
 const PlayButton = styled(Button)(({ theme }) => ({
-    backgroundColor: 'lightgreen',
+    backgroundColor: theme.palette.primary.main,
     color: 'white',
     padding: '8px 57px',
     borderRadius: '20px',
     fontSize: '13.9px',
     '&:hover': {
-        backgroundColor: '#74d674',
+        backgroundColor: alpha(theme.palette.primary.main, 0.8),
     },
     boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
     border: '4px solid #D8DEE9',
@@ -46,12 +50,19 @@ const PlayButton = styled(Button)(({ theme }) => ({
 export function GameBeginModal({ gameStart, setGameStart, game, setGame, messages }: Props
 ) {
 
+    const { settings, saveSettings } = useSettings();
+
     const handleCreateNewGame = async () => {
         const { data } = await CreateNewGame();
         setGame(data)
         setGameStart(true)
     }
-
+    const handleSwitchTheme = () => {
+        saveSettings({
+            ...settings,
+            theme: settings.theme === 'light' ? 'dark' : 'light'
+        });
+    };
 
     return (
         <Modal
@@ -76,11 +87,14 @@ export function GameBeginModal({ gameStart, setGameStart, game, setGame, message
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
                     width: 500,
-                    height: 500,
+                    height: 485,
                     borderRadius: 2,
-                    bgcolor: '#d8dee9',
+                    bgcolor: settings.theme === 'light' ?
+                        (theme) => theme.palette.background.paper :
+                        (theme) => theme.palette.background.default,
+                    backgroundImage: 'none',
+                    border: (theme) => "2px solid" + theme.palette.text.disabled,
                     p: 4,
-                    border: 'none ',
                     outline: 'none',
                     display: 'flex',
                     flexDirection: 'column',
@@ -88,14 +102,48 @@ export function GameBeginModal({ gameStart, setGameStart, game, setGame, message
                     justifyContent: 'flex-start',
                 }}>
 
-                    <Typography id="modal-title" variant="h6" component="h2"
+                    <Box
+                        sx={{
+                            position: 'absolute',
+                            top: 2,
+                            left: 2,
+                            cursor: 'pointer',
+                            backgroundColor: settings.theme === 'light' ? "white" : (theme) => alpha(theme.palette.primary.main, 0.16),
+                            border: (theme) => "2px solid" + theme.palette.text.disabled,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            p: 1,
+                            borderRadius: 2,
+                        }}
+                        onClick={handleSwitchTheme}
+                    >
+                        {
+                            settings.theme === 'light' ? <SunIcon
+                                sx={{
+                                    fill: settings.tintColor,
+                                    fontSize: 20,
+                                }}
+                            /> : <MoonIcon
+                                sx={{
+                                    fontSize: 20,
+                                    '& path': {
+                                        fill: '#bcbec2'
+                                    }
+                                }}
+                            />
+                        }
+                    </Box>
+                    <ChangeTintColor />
 
+
+                    <Typography id="modal-title" variant="h6" component="h2"
                         className={tiltWarp.className}
                         sx={{
                             fontWeight: 'bold',
                             fontSize: '1.8rem',
                             letterSpacing: '0.5px',
-                            color: '#525151',
+                            color: 'text.primary',
                         }}
                     >
                         {messages.title}
@@ -119,12 +167,12 @@ export function GameBeginModal({ gameStart, setGameStart, game, setGame, message
                                     key={index}
                                     fontWeight="bold"
                                     sx={{
-                                        color: index === 0 ? 'lightgreen' : 'black',
+                                        color: index === 0 ? 'primary.main' : 'text.primary',
                                         fontFamily: 'Nunito , sans-serif !important',
-                                        backgroundColor: 'white',
+                                        backgroundColor: settings.theme === 'light' ? "white" : (theme) => alpha(theme.palette.primary.main, 0.16),
                                         padding: '0 5px',
                                         borderRadius: 2,
-                                        border: '2px solid #D8DEE9',
+                                        border: (theme) => "2px solid" + theme.palette.text.disabled,
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
@@ -140,7 +188,6 @@ export function GameBeginModal({ gameStart, setGameStart, game, setGame, message
                                 </Typography>
                             ))
                         }
-
                     </Stack>
                     {
                         game && (
@@ -149,9 +196,11 @@ export function GameBeginModal({ gameStart, setGameStart, game, setGame, message
                                 fontWeight="bold"
                                 sx={{
                                     textTransform: 'capitalize',
-                                    backgroundColor: ' lightgreen',
+                                    backgroundColor: (theme) => alpha(theme.palette.primary.main, 0.5),
                                     px: 4,
                                     borderRadius: 2,
+                                    color: 'text.primary',
+                                    mt: 1
                                 }}
                             >
                                 {game?.maxFindWord}   {messages.words}   |  {game?.maxPoint}   {messages.points}
@@ -178,7 +227,8 @@ export function GameBeginModal({ gameStart, setGameStart, game, setGame, message
                                     backgroundColor: 'white',
                                     width: '22%',
                                     height: 110,
-                                    borderRadius: 2,
+                                    borderRadius: '3px 3px 0 0',
+
                                 }}
                             >
                                 <Typography
@@ -186,13 +236,16 @@ export function GameBeginModal({ gameStart, setGameStart, game, setGame, message
                                     fontWeight="bold"
                                     sx={{
                                         textTransform: 'capitalize',
-                                        backgroundColor: ' #d6d4d4',
+                                        backgroundColor:
+                                            settings.theme === 'light' ? (theme) => alpha(theme.palette.primary.main, 0.16) : (theme) => alpha(theme.palette.primary.main, 0.4),
                                         px: 4,
                                         py: 0.6,
                                         textAlign: 'center',
                                         color: '#545454',
                                         minHeight: 33,
                                         alignItems: 'center',
+                                        borderRadius: '3px 3px 0 0',
+
                                     }}
                                 >
                                     {item === 1 ?
@@ -206,20 +259,18 @@ export function GameBeginModal({ gameStart, setGameStart, game, setGame, message
                                     fontWeight="bold"
                                     sx={{
                                         textTransform: 'capitalize',
-                                        backgroundColor: ' white',
                                         px: 4,
-                                        borderRadius: 2,
                                         textAlign: 'center',
                                         pt: 1,
                                         color: '#545454',
                                         position: 'relative',
                                         '& span#sec , span#point': {
                                             position: 'absolute',
-                                            bottom: -3,
+                                            bottom: 3,
                                             right: 6,
                                             fontSize: 11,
                                             textTransform: 'lowercase',
-                                            backgroundColor: ' lightgreen',
+                                            backgroundColor: (theme) => alpha(theme.palette.primary.main, 0.4),
                                             px: 0.3,
                                             borderRadius: 1
                                         },
@@ -228,7 +279,10 @@ export function GameBeginModal({ gameStart, setGameStart, game, setGame, message
                                         },
                                         '& span#sec': {
                                             display: item === 3 ? 'block' : 'none',
-                                        }
+                                        },
+                                        // border:'2px solid red',
+                                        height: 58,
+                                        backgroundColor: settings.theme === 'light' ? "white" : (theme) => alpha(theme.palette.text.primary, 0.7),
 
                                     }}
                                 >
@@ -250,6 +304,7 @@ export function GameBeginModal({ gameStart, setGameStart, game, setGame, message
                     </Stack>
 
 
+
                     {
                         game && game.state.isWon && (
                             <Typography id="modal-description" sx={{ mt: 2 }}>
@@ -268,17 +323,14 @@ export function GameBeginModal({ gameStart, setGameStart, game, setGame, message
                         ) : (
                             <Stack
                                 direction='row'
-                                spacing={2}
+                                spacing={3}
                                 sx={{
                                     mt: 16
                                 }}
                             >
                                 {
                                     game?.state.time === 0 && (
-                                        <PlayButton
-                                            onClick={() => setGameStart(true)}
-
-                                        >
+                                        <PlayButton onClick={() => setGameStart(true)} >
                                             {messages.tryAgainGame}
                                         </PlayButton>
                                     )
@@ -292,13 +344,7 @@ export function GameBeginModal({ gameStart, setGameStart, game, setGame, message
                                         }
                                     }}
                                 >
-
-                                    {
-                                        game?.state.time === 60 ?
-                                            messages.startgame
-                                            : messages.newgame
-                                    }
-
+                                    {game?.state.time === 60 ? messages.startgame : messages.newgame}
                                 </PlayButton>
                             </Stack>
 

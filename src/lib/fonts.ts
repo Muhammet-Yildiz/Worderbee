@@ -2,7 +2,8 @@ import {
     JetBrains_Mono as FontMono,
     Plus_Jakarta_Sans as FontSans,
     Nunito,
-    Tilt_Warp as TiltWrap
+    Tilt_Warp as TiltWrap,
+    Montserrat
 } from "next/font/google"
 
 export const fontSans = FontSans({
@@ -20,5 +21,9 @@ export const nunito = Nunito({
 })
 
 export const tiltWarp = TiltWrap({
+    subsets: ['latin']
+})
+
+export const montserrat = Montserrat({
     subsets: ['latin']
 })

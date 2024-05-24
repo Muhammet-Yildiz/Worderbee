@@ -37,6 +37,16 @@
         "alreadyExist": "Word is already in the list",
         "success": "is in the words list . Well done!",
         "notFound": "Not in the words list"
+    },
+    "lang": {
+        "title": "Dictionary",
+        "text": "Select Dictionary",
+        "subText": "Select a game dictionary (opens in a new tab)"
+    },
+    "settings": {
+        "title": "Settings",
+        "themeMode": "Theme Mode",
+        "tintColors": "Tint Colors"
     }
 
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ArrowDownIcon } from '@/icons/arrow-down';
-import { Container, Menu, Stack, Typography } from '@mui/material';
+import { alpha, Container, Menu, Stack, Typography } from '@mui/material';
 
 
 export function BlockWordsSelect({ foundWords, messages }: { foundWords: string[], messages: any }) {
@@ -27,7 +27,7 @@ export function BlockWordsSelect({ foundWords, messages }: { foundWords: string[
                 onClick={handleClick}
                 sx={{
                     position: 'relative',
-                    backgroundColor: '#f1f4f9',
+                    backgroundColor: (theme) => theme.palette.background.paper,
                     borderRadius: '0.4rem',
                     cursor: 'pointer',
                     transition: '0.3s all',
@@ -39,7 +39,7 @@ export function BlockWordsSelect({ foundWords, messages }: { foundWords: string[
                         fontSize: '0.9rem',
                         position: 'absolute',
                         right: '0',
-                        backgroundColor: '#f1f4f9',
+                        backgroundColor:   (theme) => theme.palette.background.paper,
                         padding: '0.3rem 1.1rem ',
                     },
                     overflow: 'hidden',
@@ -57,7 +57,7 @@ export function BlockWordsSelect({ foundWords, messages }: { foundWords: string[
                         sx={{
                             m: '0 !important',
                             mr: '0.35rem !important',
-                            color: '#424556',
+                            color:  (theme) => theme.palette.text.primary
                         }}
                     >
                         {item}
@@ -87,7 +87,7 @@ export function BlockWordsSelect({ foundWords, messages }: { foundWords: string[
                     left: 0,
                     '& .MuiMenu-paper': {
                         width: '550px !important',
-                        backgroundColor: '#f1f4f9',
+                        backgroundColor:  (theme) => theme.palette.background.paper,
                         boxShadow: 'none',
                         pb: 1.6
                     },
@@ -110,14 +110,14 @@ export function BlockWordsSelect({ foundWords, messages }: { foundWords: string[
                 >
                     {messages.words === '' ?
                         <>
-                            <span style={{ color: 'black', fontWeight: 'bold' }}  > {foundWords?.length} </span>
+                            <span style={{ fontWeight: 'bold' }}  > {foundWords?.length} </span>
                             {messages.haveFound}
                         </>
                         :
 
                         <>
                             {messages.haveFound}
-                            <span style={{ color: 'black', fontWeight: 'bold' }}  > {foundWords?.length} </span>
+                            <span style={{  fontWeight: 'bold' }}  > {foundWords?.length} </span>
                             {messages.words}
                         </>
                     }
@@ -142,7 +142,7 @@ export function BlockWordsSelect({ foundWords, messages }: { foundWords: string[
                             sx={{
                                 m: '0 !important',
                                 mr: '1.6rem !important',
-                                backgroundColor: '#a6f1a6',
+                                backgroundColor:  (theme) => alpha(theme.palette.primary.main, 0.2),
                                 padding: '0.3rem 0.5rem ',
                                 borderRadius: '0.4rem',
 

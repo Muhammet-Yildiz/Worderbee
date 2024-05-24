@@ -37,5 +37,15 @@
         "alreadyExist": "Kelimesi listede bulunuyor.",
         "success": "kelimesi  listede. Tebrikler!",
         "notFound": "Kelimeler listesinde bulunamadı."
+    },
+    "lang": {
+        "title": "Dilim",
+        "text": "Dil seçin",
+        "subText": "Bir oyun sözlüğü seçin (yeni bir sekmede açılır)"
+    },
+    "settings": {
+        "title": "Ayarlar",
+        "themeMode": "Tema Modu",
+        "tintColors": "Renk Tonu"
     }
 }
